@@ -12,7 +12,7 @@ class PortsPipeline(object):
         super().__init__()
         username = urllib.parse.quote_plus('ports')
         password = urllib.parse.quote_plus('123456')
-        conn = MongoClient(host='mongodb://%s:%s@120.133.26.190' % (username, password), port=2000)
+        conn = MongoClient(host='mongodb://%s:%s@localhost' % (username, password), port=27017)
         self.col = conn['raw_data']['ports_detail']
     
     def process_item(self, item, spider):
